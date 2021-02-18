@@ -1,0 +1,156 @@
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class Cuestionario extends AppCompatActivity {
+
+    /*Declaración de  variables*/
+    boolean Lluvia =Boolean.FALSE;
+    boolean Luz = Boolean.FALSE;
+    boolean Vision =Boolean.FALSE;
+    boolean Audicion = Boolean.FALSE;
+    boolean modo = Boolean.FALSE;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cuestionario);
+
+        /*Declaración de los botones y las cajas de texto*/
+        Button bcrear = findViewById(R.id.bCrear);
+        final Button bSiLluvia = findViewById(R.id.bSiLluvia);
+        final Button bNoLluvia = findViewById(R.id.bNoLluvia);
+        final Button bSiLuz = findViewById(R.id.bSiLuz);
+        final Button bNoLuz = findViewById(R.id.bNoLuz);
+        final Button bSivis = findViewById(R.id.bSivision);
+        final Button bNovis = findViewById(R.id.bNovision);
+        final Button bSiaud = findViewById(R.id.bSiaud);
+        final Button bNoaud= findViewById(R.id.bNoaud);
+        final TextView t1 = findViewById(R.id.textView4);
+        final TextView t2 = findViewById(R.id.textView5);
+        final EditText CajaNombre = findViewById(R.id.CajaNombre) ;
+        
+        /*Recoger información de la pantalla principal*/
+        Bundle b = getIntent().getExtras();
+        assert b != null;
+        modo= b.getBoolean("modo");
+
+        if(modo){
+            bSiLluvia.setBackgroundColor(Color.TRANSPARENT);
+            bSiLluvia.setText("");
+            bNoLluvia.setBackgroundColor(Color.TRANSPARENT);
+            bNoLluvia.setText("");
+            bSiLuz.setBackgroundColor(Color.TRANSPARENT);
+            bSiLuz.setText("");
+            bNoLuz.setBackgroundColor(Color.TRANSPARENT);
+            bNoLuz.setText("");
+            t1.setBackgroundColor(Color.TRANSPARENT);
+            t1.setText("");
+            t2.setBackgroundColor(Color.TRANSPARENT);
+            t2.setText("");
+        }
+        
+        /* Guardar respuestas del cuestionario*/
+        bSiLluvia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bSiLluvia.setBackgroundColor(Color.parseColor("#71C846"));
+                bNoLluvia.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Lluvia=Boolean.TRUE;
+            }
+        });
+        bNoLluvia.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bNoLluvia.setBackgroundColor(Color.parseColor("#71C846"));
+                bSiLluvia.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Lluvia= Boolean.FALSE;
+            }
+        });
+        bSiLuz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bSiLuz.setBackgroundColor(Color.parseColor("#71C846"));
+                bNoLuz.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Luz=Boolean.TRUE;
+            }
+        });
+        bNoLuz.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bNoLuz.setBackgroundColor(Color.parseColor("#71C846"));
+                bSiLuz.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Luz=Boolean.FALSE;
+            }
+        });
+        bSivis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bSivis.setBackgroundColor(Color.parseColor("#71C846"));
+                bNovis.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Vision=Boolean.TRUE;
+            }
+        });
+        bNovis.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bNovis.setBackgroundColor(Color.parseColor("#71C846"));
+                bSivis.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Vision=Boolean.FALSE;
+            }
+        });
+        bSiaud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bSiaud.setBackgroundColor(Color.parseColor("#71C846"));
+                bNoaud.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Audicion=Boolean.TRUE;
+            }
+        });
+        bNoaud.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                bNoaud.setBackgroundColor(Color.parseColor("#71C846"));
+                bSiaud.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                Audicion=Boolean.FALSE;
+            }
+        });
+         /*Función para que al pulsar el botón de crear perfil vuelva a la pantalla inicial*/
+        bcrear.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                bSiLluvia.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bNoLluvia.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bSiLuz.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bNoLuz.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bNovis.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bSivis.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bNoaud.setBackgroundColor(Color.parseColor("#C1BDBD"));
+                bSiaud.setBackgroundColor(Color.parseColor("#C1BDBD"));
+
+                Intent intent = new Intent(v.getContext(), PrincipalNuevoPerfil.class);
+                String TextoExp =CajaNombre.getText().toString();
+               
+               if (TextoExp.equals("")) {
+                    intent.putExtra("perfil", "PERFIL NUEVO");
+                }
+                else {
+                    intent.putExtra("perfil",TextoExp);
+                }
+                intent.putExtra("modo",modo);
+                if(!modo){
+                    intent.putExtra("Lluvia", Lluvia);
+                    intent.putExtra("Luz",Luz);
+                }
+                intent.putExtra("Vision", Vision);
+                intent.putExtra("Audicion",Audicion);
+                startActivityForResult(intent, 0);
+                
+            }
+        });
+    }
+}
+

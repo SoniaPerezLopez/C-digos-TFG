@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D6E8EC"
+    tools:context=".Cuestionario">
+
+
+        android:layout_height="wrap_content"
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="425dp"
+        android:layout_height="68dp"
+        android:text="CUESTIONARIO"
+        android:textColor="#1A225A"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="770dp"
+        android:layout_height="37dp"
+        android:layout_marginTop="4dp"
+        android:text="¿La conducción con lluvia te produce estrés?"
+        android:textAllCaps="true"
+        android:textColor="#090909"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.584"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline6"
+        app:layout_constraintVertical_bias="0.173" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="1021dp"
+        android:layout_height="46dp"
+        android:text="¿La conducción por la noche o con poca luz  te produce estrés?"
+        android:textAllCaps="true"
+        android:textColor="#090909"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline7"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bSiLluvia"
+        android:layout_width="170dp"
+        android:layout_height="70dp"
+        android:background="#C1BDBD"
+        android:text="SI"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <Button
+        android:id="@+id/bSiLuz"
+        android:layout_width="167dp"
+        android:layout_height="74dp"
+        android:background="#C1BDBD"
+        android:text="SI"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <Button
+        android:id="@+id/bSivision"
+        android:layout_width="171dp"
+        android:layout_height="76dp"
+        android:background="#C1BDBD"
+        android:text="SI"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline34"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bSiaud"
+        android:layout_width="165dp"
+        android:layout_height="71dp"
+        android:background="#C1BDBD"
+        android:text="SI"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toStartOf="@+id/guideline11"
+        app:layout_constraintHorizontal_bias="0.501"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.75" />
+
+    <Button
+        android:id="@+id/bNoLuz"
+        android:layout_width="167dp"
+        android:layout_height="71dp"
+        android:background="#C1BDBD"
+        android:text="NO"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline10"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline8" />
+
+    <Button
+        android:id="@+id/bNovision"
+        android:layout_width="173dp"
+        android:layout_height="74dp"
+        android:background="#C1BDBD"
+        android:text="NO"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline36"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline34"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/bNoaud"
+        android:layout_width="171dp"
+        android:layout_height="73dp"
+        android:background="#C1BDBD"
+        android:text="NO"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline35"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline37"
+        app:layout_constraintVertical_bias="0.391" />
+
+    <Button
+        android:id="@+id/bNoLluvia"
+        android:layout_width="161dp"
+        android:layout_height="75dp"
+        android:background="#C1BDBD"
+        android:text="No"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline11"
+        app:layout_constraintTop_toTopOf="@+id/guideline9" />
+
+    <EditText
+        android:id="@+id/CajaNombre"
+        android:layout_width="444dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="12dp"
+        android:ems="10"
+        android:hint="Introduce el nombre de tu perfil"
+        android:inputType="textPersonName"
+        android:textColor="#676464"
+        android:textSize="30sp"
+        app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline35"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <Button
+        android:id="@+id/bCrear"
+        android:layout_width="182dp"
+        android:layout_height="87dp"
+        android:background="#56616E"
+        android:text="CREAR"
+        android:textColor="#0E0E0E"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CajaNombre" />
+
+ 
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="1001dp"
+        android:layout_height="38dp"
+        android:text="¿Posee algún defecto de visión (daltonismo/ astigmatismo)?"
+        android:textAllCaps="true"
+        android:textColor="#090909"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline34"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline10" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="573dp"
+        android:layout_height="34dp"
+        android:text="¿POSEE ALGÚN DEFECTO DE AUDICIÓN?"
+        android:textAllCaps="true"
+        android:textColor="#090909"
+        android:textSize="29sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline37"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline36" />
+</androidx.constraintlayout.widget.ConstraintLayout>

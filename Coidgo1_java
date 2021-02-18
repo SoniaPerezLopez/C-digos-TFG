@@ -1,0 +1,153 @@
+/* Creado por: Sonia Pérez López
+    Fecha: 20/08/2020 
+    ACTIVITY 1*/
+
+package com.example.salpicaderointeligente;
+import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
+
+
+
+public class MainActivity extends AppCompatActivity {
+    String Laura ="Laura";
+    String Javier ="Javier";
+    String Sara= "Sara";
+    String perfil="";
+    boolean modo=Boolean.FALSE; //True para simulación, false para manual
+   
+ /*Para guardar los valores de otros trayectos*/
+    boolean lluvia= Boolean.FALSE; 
+    boolean luz= Boolean.FALSE; 
+    boolean Audicion= Boolean.FALSE; 
+    boolean Vision= Boolean.FALSE;
+    boolean flag=Boolean.FALSE;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        final Button bsimulacion=findViewById(R.id.bsimulacionentorno);
+        final Button bmanual= findViewById(R.id.bentradasdadas);
+        final Button btn =  findViewById(R.id.bCuestionario);
+        final Button bcreado= findViewById(R.id.bcreado);
+        final Button bLaura= findViewById(R.id.bLaura);
+        final Button bJavier = findViewById(R.id.bJavier);
+        final Button bSara = findViewById(R.id.bSara);
+
+
+        /*Interrupciones por pulsar botones*/
+        
+        bsimulacion.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modo= Boolean.TRUE;
+                bsimulacion.setBackgroundColor(Color.parseColor("#71C846"));
+            }
+        });
+
+        bmanual.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                modo= Boolean.FALSE;
+                bmanual.setBackgroundColor(Color.parseColor("#71C846"));
+            }
+        });
+
+
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Cuestionario.class);
+                intent.putExtra("modo", modo);
+                startActivityForResult(intent, 0);
+            }
+        } );
+
+        /* PERFIL LAURA*/
+        bLaura.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(v.getContext(), PERFILNORMAL.class);
+                in.putExtra("modo", modo);
+                in.putExtra("Lluvia", Boolean.TRUE);
+                in.putExtra("Luz",Boolean.TRUE);
+                in.putExtra("Vision", Boolean.FALSE);
+                in.putExtra("Audicion",Boolean.TRUE);
+                in.putExtra("Nombre", Laura);
+                startActivityForResult(in, 0);
+            }
+        });
+         
+        /* PERFIL JAVIER*/
+        bJavier.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(v.getContext(), PERFILNORMAL.class);
+                in.putExtra("modo", modo);
+                in.putExtra("Lluvia", Boolean.TRUE);
+                in.putExtra("Luz",Boolean.FALSE);
+                in.putExtra("Vision", Boolean.TRUE);
+                in.putExtra("Audicion",Boolean.FALSE);
+                in.putExtra("Nombre", Javier);
+
+                startActivityForResult(in, 0);
+            }
+        });
+
+        /* PERFIL SARA*/
+        bSara.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(v.getContext(), PERFILNORMAL.class);
+                in.putExtra("modo", modo);
+                in.putExtra("Lluvia", Boolean.FALSE);
+                in.putExtra("Luz",Boolean.FALSE);
+                in.putExtra("Vision", Boolean.FALSE);
+                in.putExtra("Audicion",Boolean.FALSE);
+                in.putExtra("Nombre", Sara);
+                startActivityForResult(in, 0);
+
+            }
+        });
+        
+        bcreado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!flag){
+                    bcreado.setText("");
+                    Bundle b7 = getIntent().getExtras();
+                    assert b7!=null;
+                    modo = b7.getBoolean("modo");
+                    Audicion = b7.getBoolean("Audicion");
+                    Vision = b7.getBoolean("Vision");
+                    perfil = b7.getString("informacion1");
+                    bcreado.setText(perfil);
+                    if (modo) {
+                        lluvia = b7.getBoolean("informacion2");
+                        luz = b7.getBoolean("informacion3");
+                    }
+                    else {
+                        lluvia = b7.getBoolean("lluvia");
+                        luz = b7.getBoolean("luz");
+                    }
+                    flag=Boolean.TRUE;
+                }
+                else {
+                    Intent in = new Intent(v.getContext(), PERFILNORMAL.class);
+                    in.putExtra("modo", modo);
+                    in.putExtra("Lluvia", lluvia);
+                    in.putExtra("Luz", luz);
+                    in.putExtra("Vision", Vision);
+                    in.putExtra("Audicion", Audicion);
+                    in.putExtra("Nombre", perfil);
+                    startActivityForResult(in, 0);
+                }
+            }
+        });
+    }
+}

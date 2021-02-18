@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#D6E8EC"
+    android:visibility="visible"
+    tools:context=".PERFILNORMAL">
+
+    <TextView
+        android:id="@+id/cajanombre"
+        android:layout_width="342dp"
+        android:layout_height="66dp"
+        android:layout_marginEnd="268dp"
+        android:layout_marginRight="268dp"
+        android:text="VACÍO"
+        android:textColor="#06284E"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.476" />
+
+    <TextView
+        android:id="@+id/cajanombre2"
+        android:layout_width="409dp"
+        android:layout_height="64dp"
+        android:text="Información de :"
+        android:textColor="#0A1A53"
+        android:textSize="50sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline17"
+        app:layout_constraintEnd_toStartOf="@+id/cajanombre"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.485" />
+
+    <TextView
+        android:id="@+id/textoinfo"
+        android:layout_width="995dp"
+        android:layout_height="105dp"
+        android:text="TextView"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/guideline39"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline17" />
+
+    <TextView
+        android:id="@+id/textoinfo1"
+        android:layout_width="976dp"
+        android:layout_height="122dp"
+        android:text="TextView"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/guideline18"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoinfo" />
+
+    <TextView
+        android:id="@+id/textoinfo2"
+        android:layout_width="931dp"
+        android:layout_height="123dp"
+        android:layout_marginTop="4dp"
+        android:text="TextView"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/guideline40"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline18" />
+
+    <TextView
+        android:id="@+id/textoinfo3"
+        android:layout_width="956dp"
+        android:layout_height="101dp"
+        android:text="TextView"
+        android:textSize="36sp"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toTopOf="@+id/guideline38"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.471"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textoinfo2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    
+
+    <Button
+        android:id="@+id/ptrayecto"
+        android:layout_width="458dp"
+        android:layout_height="113dp"
+        android:background="#090E3A"
+        android:text="EMPEZAR TRAYECTO"
+        android:textColor="#DFC6BE"
+        android:textColorHighlight="#FFFFFF"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/guideline49"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline38" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
